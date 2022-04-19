@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.getstarted.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.getstarted.ui.profile.profileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.example.getstarted.ui.category.CategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/nav_offers"
+        android:name="com.example.getstarted.offersFragment"
+        android:label="@string/offers"
+        tools:layout="@layout/fragment_offers2" />
+    <fragment
+        android:id="@+id/nav_new_products"
+        android:name="com.example.getstarted.newproductsFragment"
+        android:label="@string/new_products"
+        tools:layout="@layout/fragment_newproducts" />
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.example.getstarted.ordersFragment"
+        android:label="@string/my_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/nav_my_cart"
+        android:name="com.example.getstarted.mycartFragment"
+        android:label="@string/my_cart"
+        tools:layout="@layout/fragment_mycart" />
+    <fragment
+        android:id="@+id/nav_wallet"
+        android:name="com.example.getstarted.walletFragment"
+        android:label="@string/wallet"
+        tools:layout="@layout/fragment_wallet" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.getstarted.logoutFragment"
+        android:label="@string/log_out"
+        tools:layout="@layout/fragment_logout" />
+</navigation>
