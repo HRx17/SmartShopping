@@ -182,7 +182,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="70dp"
         android:backgroundTint="#99E32D6B"
-        android:text="Whole Grains"
+        android:text="Utensils"
         android:textColor="#101010"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

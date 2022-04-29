@@ -45,14 +45,11 @@ public class newproductsFragment extends Fragment {
 
     public static BreakIterator textView;
     FirebaseFirestore db;
-    TextView total;
-    Button button;
     FirebaseAuth auth;
-    LinearLayout empty,newproduct,head;
+    LinearLayout empty,newproduct;
     RecyclerView recyclerView;
     NewProductAdaptor newproductAdaptor;
     List<NewProductModel> newproductModelList;
-    String bill;
 
     public newproductsFragment() {
 
@@ -63,12 +60,8 @@ public class newproductsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_newproducts, container, false);
         empty = root.findViewById(R.id.newproduct_empty);
-        button = root.findViewById(R.id.buynow);
-        button.setVisibility(View.GONE);
-        head = root.findViewById(R.id.pricehead);
-        head.setVisibility(View.GONE);
         newproduct = root.findViewById(R.id.newproduct_lin);
-        newproduct.setVisibility(View.GONE);
+        newproduct.setVisibility(View.VISIBLE);
         empty.setVisibility(View.VISIBLE);
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -79,8 +72,7 @@ public class newproductsFragment extends Fragment {
         newproductAdaptor = new NewProductAdaptor(getActivity(), newproductModelList);
         recyclerView.setAdapter(newproductAdaptor);
 
-        db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
-                .collection("addtonewproduct").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("NewProduct").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()) {
@@ -93,14 +85,10 @@ public class newproductsFragment extends Fragment {
                         if(newproductModel != null){
                             empty.setVisibility(View.GONE);
                             newproduct.setVisibility(View.VISIBLE);
-                            head.setVisibility(View.VISIBLE);
-                            button.setVisibility(View.VISIBLE);
                         }
                         else{
                             empty.setVisibility(View.VISIBLE);
                             newproduct.setVisibility(View.GONE);
-                            head.setVisibility(View.GONE);
-                            button.setVisibility(View.GONE);
                         }
                     }
                 }
