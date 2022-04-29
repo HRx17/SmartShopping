@@ -5,12 +5,22 @@ public class NewProductModel {
     String name;
     String description;
     int price;
+    String documentId;
 
-    public NewProductModel(String img_url, String name, String description, int price) {
+    public NewProductModel(String img_url, String name, String description, int price, String documentId) {
         this.img_url = img_url;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.documentId = documentId;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
     }
 
     public String getImg_url() {
