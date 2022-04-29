@@ -4,7 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".offersFragment">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/offer_empty"
+        android:orientation="vertical">
     <ImageView
         android:layout_width="400dp"
         android:layout_height="300dp"
@@ -17,6 +25,19 @@
         android:layout_gravity="center"
         android:textSize="20dp"
         android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/offer_lin"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rec_offer"/>
+    </LinearLayout>
+
+    </LinearLayout>
 
 
 </FrameLayout>
