@@ -24,7 +24,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/cart_img"
+                    android:id="@+id/newproduct_img"
                     android:layout_width="150dp"
                     android:layout_height="200dp"
                     android:layout_marginLeft="10dp"
@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
-                        android:id="@+id/cart_name"
+                        android:id="@+id/newproduct_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -43,21 +43,34 @@
                         android:text="Product_Name"
                         android:textStyle="bold" />
                     <TextView
-                        android:id="@+id/cart_name"
+                        android:id="@+id/newproduct_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="30dp"
                         android:text="Product_Description"
                         android:textStyle="italic" />
-                    <TextView
-                        android:id="@+id/cart_name"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="30dp"
-                        android:text="Price:"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="30dp"
+                            android:text="Price: "
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/newproduct_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="Rs. "
+                            android:layout_marginTop="30dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
