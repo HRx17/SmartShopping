@@ -18,6 +18,7 @@ import com.example.getstarted.Models.NewProductModel;
 import com.example.getstarted.Models.NewProductModel;
 import com.example.getstarted.Models.ViewAllModel;
 import com.example.getstarted.R;
+import com.example.getstarted.activities.ViewAllActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +34,6 @@ public class NewProductAdaptor extends RecyclerView.Adapter<NewProductAdaptor.Vi
     FirebaseAuth auth;
     FirebaseFirestore db;
     List<NewProductModel> list;
-    int totalprice =0;
 
     public NewProductAdaptor(Context context, List<NewProductModel> list) {
         this.context = context;
@@ -45,7 +45,7 @@ public class NewProductAdaptor extends RecyclerView.Adapter<NewProductAdaptor.Vi
     @NonNull
     @Override
     public NewProductAdaptor.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        return new NewProductAdaptor.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items,parent,false));
+        return new NewProductAdaptor.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.newproduct_item,parent,false));
     }
 
     @Override
@@ -53,6 +53,15 @@ public class NewProductAdaptor extends RecyclerView.Adapter<NewProductAdaptor.Vi
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.img);
         holder.name.setText(list.get(position).getName());
         holder.price.setText(String.valueOf(list.get(position).getPrice()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ViewAllActivity.class);
+                intent.putExtra("type",list.get(position).getType());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -84,7 +84,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ViewAllActivity.class);
-                intent.putExtra("type","grains");
+                intent.putExtra("type","utensils");
                 startActivity(intent);
             }
         });
@@ -100,7 +100,7 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ViewAllActivity.class);
-                intent.putExtra("type","packedfood");
+                intent.putExtra("type","packed foods");
                 startActivity(intent);
             }
         });

@@ -4,15 +4,28 @@ public class NewProductModel {
     String img_url;
     String name;
     String description;
+    String type;
     int price;
     String documentId;
 
-    public NewProductModel(String img_url, String name, String description, int price, String documentId) {
+    public NewProductModel(String img_url, String name, String description, int price, String documentId, String type) {
         this.img_url = img_url;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.type = type;
         this.documentId = documentId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public NewProductModel() {
     }
 
     public String getDocumentId() {

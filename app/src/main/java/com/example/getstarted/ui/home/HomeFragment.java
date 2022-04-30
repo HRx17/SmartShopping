@@ -14,25 +14,31 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.getstarted.Models.CategoryModel;
+import com.example.getstarted.Models.NewProductModel;
 import com.example.getstarted.Models.Recommended;
+import com.example.getstarted.Models.ViewAllModel;
 import com.example.getstarted.R;
 import com.example.getstarted.Models.PopularModel;
 import com.example.getstarted.activities.ViewAllActivity;
 import com.example.getstarted.adaptors.CategoryAdaptor;
 import com.example.getstarted.adaptors.PopularAdaptor;
 import com.example.getstarted.adaptors.RecommendedAdaptor;
+import com.example.getstarted.adaptors.ViewAllAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    RecyclerView popularRec,catRec,recomRec;
+    RecyclerView popularRec,catRec,recomRec,allrec;
     FirebaseFirestore db;
 
     TextView viewp,viewr;

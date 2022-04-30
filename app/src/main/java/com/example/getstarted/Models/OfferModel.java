@@ -4,11 +4,21 @@ public class OfferModel {
     String img_url;
     String name;
     int price;
+    String documentId;
 
-    public OfferModel(String img_url, String name, int price) {
+    public OfferModel(String img_url, String name, int price, String documentId) {
         this.img_url = img_url;
         this.name = name;
         this.price = price;
+        this.documentId = documentId;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
     }
 
     public String getImg_url() {
