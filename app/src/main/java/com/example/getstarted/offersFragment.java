@@ -70,7 +70,7 @@ public class offersFragment extends Fragment {
         offerAdaptor = new OfferAdaptor(getActivity(), offerModelList);
         recyclerView.setAdapter(offerAdaptor);
 
-        db.collection("NewProduct").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("offers").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull @NotNull  Task<QuerySnapshot>task) {
                 if(task.isSuccessful()) {

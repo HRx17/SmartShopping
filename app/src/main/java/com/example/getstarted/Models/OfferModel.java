@@ -13,6 +13,9 @@ public class OfferModel {
         this.documentId = documentId;
     }
 
+    public OfferModel() {
+    }
+
     public String getDocumentId() {
         return documentId;
     }
