@@ -47,8 +47,6 @@ public class OfferAdaptor extends RecyclerView.Adapter<OfferAdaptor.ViewHolder>{
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.img);
         holder.name.setText(list.get(position).getName());
         holder.price.setText(String.valueOf(list.get(position).getPrice()));
-
-
     }
 
     @Override
